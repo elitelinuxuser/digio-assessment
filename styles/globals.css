@@ -1,3 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    text-underline-position: under;
+  }
+
+  body {
+    /* @apply scrollbar-custom; */
+    @apply font-sans;
+    /*@apply text-secondary-text;*/
+    @apply text-sm xl:text-base;
+  }
+
+  a {
+    @apply transition-colors;
+    @apply no-underline;
+  }
+
+  button {
+    @apply border-0;
+  }
+
+  /*header a {*/
+  /*  color: #373737;*/
+  /*  @apply text-lg lg:text-xl tracking-widest;*/
+  /*  @apply font-sans;*/
+  /*  @apply hover:text-primary active:text-primary;*/
+  /*}*/
+}
+
+/* Spacing */
+@layer components {
+  .mt-section {
+    @apply mt-8 sm:mt-16;
+  }
+
+  .mb-section {
+    @apply mb-8 sm:mb-16;
+  }
+
+  .my-section {
+    @apply mt-section mb-section;
+  }
+
+  .pt-section {
+    @apply pt-8 sm:pt-12;
+  }
+
+  .pb-section {
+    @apply pb-8 md:pb-12;
+  }
+
+  .py-section {
+    @apply pt-section pb-section;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply text-base md:text-lg xl:text-xl;
+    /*@apply rounded-xl;*/
+  }
+
+  .btn.primary {
+    @apply bg-primary hover:bg-primary-light active:bg-primary-light;
+    @apply disabled:bg-transparent disabled:hover:bg-transparent disabled:active:bg-transparent;
+    @apply disabled:border disabled:border-secondary-text disabled:bg-secondary disabled:cursor-not-allowed;
+    @apply transition-colors text-white disabled:text-secondary-text;
+  }
+
+  .btn.primary.outlined {
+    @apply bg-transparent hover:bg-primary active:bg-primary-light;
+    @apply disabled:bg-secondary-light disabled:border-dashed;
+    @apply border border-primary;
+    @apply transition-colors text-primary hover:text-white disabled:text-secondary-text;
+  }
+
+  .btn.secondary-light {
+    @apply bg-secondary-light hover:bg-secondary-light active:bg-secondary-light;
+    @apply disabled:bg-transparent disabled:hover:bg-transparent disabled:active:bg-transparent;
+    @apply disabled:border disabled:border-secondary-text disabled:border-dashed;
+    @apply transition-colors text-primary disabled:text-secondary-text;
+  }
+
+  .btn.transparent {
+    @apply bg-transparent hover:text-primary;
+  }
+
+  .btn.sm {
+    @apply px-2.5 py-1.5;
+    @apply text-sm;
+  }
+
+  .btn.md {
+    @apply px-9 py-2.5;
+    @apply text-base;
+  }
+
+  .btn.lg {
+    @apply px-12 py-3;
+  }
+
+  .btn.icon {
+    @apply p-3 rounded-full;
+    @apply hover:text-primary;
+  }
+}
+
+/* TYPOGRAPHY */
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  a {
+    @apply mt-0 mb-0;
+  }
+
+  h1 {
+    @apply font-bold;
+    @apply text-primary-text;
+    @apply text-2xl md:text-4xl xl:text-7xl;
+    @apply mb-6;
+  }
+
+  h2 {
+    @apply font-bold;
+    @apply text-primary-text;
+    @apply text-2xl md:text-3xl xl:text-6xl;
+    @apply mb-6 xl:mb-8;
+  }
+
+  h3 {
+    @apply font-serif;
+    @apply text-primary-text font-normal;
+    @apply text-base md:text-1.5xl xl:text-3xl;
+    @apply leading-7 xl:leading-9;
+    @apply mb-4 md:mb-6;
+  }
+
+  h4 {
+    @apply font-serif font-semibold;
+    @apply text-primary-text;
+    @apply text-lg xl:text-xl;
+    @apply mb-2;
+  }
+
+  h5 {
+    @apply font-serif;
+    @apply text-primary-text font-normal;
+    @apply text-base md:text-lg lg:text-xl;
+    @apply mb-2 md:mb-3 lg:mb-4;
+    /* TODO: Check why this exists */
+    /*@apply text-xl;*/
+  }
+
+  /* Overline */
+  h6 {
+    @apply text-primary-text font-normal;
+    @apply text-xs;
+  }
+
+  p {
+    @apply text-sm sm:text-base m-0 text-secondary-text;
+  }
+}
+
 html,
 body {
   padding: 0;
