@@ -54,8 +54,8 @@ const SignPage: NextPage = () => {
                     otp: ''
                 }}
                         validationSchema={object().shape({
-                            id: string().min(12, 'Minimum 12 characters').required('Aadhaar number is required'),
-                            otp: string().min(6, 'Need to be 6 digits').required('OTP is required')
+                            id: string().min(12, 'Need to be 12 characters').max(12, 'Need to be 12 characters').required('Aadhaar number is required'),
+                            otp: string().min(6, 'Need to be 6 digits').max(6, 'Need to be 6 digits').required('OTP is required')
                         })}
                         onSubmit={handleSign}>
                     {({handleChange, isValid, values, dirty, errors}) => (
